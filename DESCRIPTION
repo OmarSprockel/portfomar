@@ -1,0 +1,14 @@
+Package: portfomar
+Title: Package that provides information for requested parts of the world
+Version: 0.0.0.9000
+Authors@R: 
+    person("Omar", "Sprockel", , "omar.sprockel@student.hu.nl", role = c("creator"),
+Description: This package provides information and statistics for various regions or countries. Use the function RegionFinder to find the region a requested country is located in. The reverse is also possible in CountryFinder by supplying a Region, which gives you the countries present in that region. Population_finder needs a country and year as input. Population_finder then provides the total population for that country during that year. Life_expectancy_graph asks for a region and year as input. Afterwards Life_expectancy_graph generates a bar graph showing the average life_expectancy for each country in said region for that year. Use the functions in this package to your liking for easy access to statistics around the globe!
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
