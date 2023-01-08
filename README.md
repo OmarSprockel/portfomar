@@ -1,1 +1,77 @@
 # portfomar
+
+---
+title: "portfomar"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+This vignette describes the usage of the 'portomar' package. Use the functions in this package to swiftly find information, or create a graph regarding countries and regions. The data is pulled from a database that was originally used for an assignment in a portfolio. This package aims to use the data present in that database and create functions to make your life easier.
+
+The package contains the following functions:
+<ul>
+<li>CouFinder</li>
+<li>Life_expectancy_graph</li>
+<li>Population_finder</li>
+<li>RegionFinder</li>
+</ul>
+
+In this vignette the usage of these functions will be explained. In order to make the functions usable we will be loading in the required packages.
+
+
+```{r setup}
+library(portfomar)
+library(ggplot2)
+library(dplyr)
+```
+
+# CouFinder
+
+The first function makes it easier to find a country, related to a region. The dataset contains statistics for each country during certain time periods. CouFinder utilises the Country and Region column by allowing you to find which countries are present in a given region. CouFinder requests only a given region (that is present in the database) to return the countries in that region.
+
+Example: Let's say you are wondering which countries are in Western Europe.
+```{r Coufinder_check}
+CouFinder("Western Europe")
+```
+
+
+# RegionFinder
+
+The second function is similar to CouFinder, in that it attempts to do the reverse. Regionfinder utilises the Country and Region column by allowing you to find which region a country lies in. Regionfinder requests a given country (that is present in the database) and will return the region that that country is located in.
+
+Example: Let's say you are wondering which region the Netherlands lies in.
+```{r RegionFinder_check}
+RegionFinder("Netherlands")
+```
+
+
+# Population_finder
+
+This function uses the database to find the total population of a given country for each year. The function searches through the year column, country, and population to find the total population for the given year and country. The function only requires a given country and year, to give you the population.
+
+Example: Let's say you want to know the population of the Netherlands in the year 2004.
+```{r Population_finder_check}
+Population_finder("Netherlands", "2004")
+```
+
+
+# Life_expectancy_graph
+
+This function makes a visual representation of the life expectancy of a given region and year by generating a bar graph. The function filters the life expectancy for the given parameters from the database and uses them to create the graph. Input the region and year wanted, and the function will create a bar graph visualising the life expectancy for each country in the given region and year.
+
+Example: Let's say you want to know the life expectancy of countries in Eastern Europe in 2006
+```{r Life_expectancy_graph_check}
+Life_expectancy_graph("Eastern Europe", "2006")
+```
