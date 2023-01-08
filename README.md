@@ -1,22 +1,4 @@
-# portfomar
-
----
-title: "portfomar"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{introduction}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-# Introduction
+# portfomar Introduction
 
 This vignette describes the usage of the 'portomar' package. Use the functions in this package to swiftly find information, or create a graph regarding countries and regions. The data is pulled from a database that was originally used for an assignment in a portfolio. This package aims to use the data present in that database and create functions to make your life easier.
 
